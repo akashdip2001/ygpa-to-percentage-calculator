@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+  
+<body>
+    <h1>YGPA Calculator</h1>
+  
+    <div>
+  
+        <!-- Defines a field for entering a number-->
+        <h2> SGPA 1 + SGPA 2 <input type="number" id="sgpa" placeholder="Enter sum of credits for both semester" />
+        </h2>
+  
+        <!-- onclick event is to call the function when
+            user click on the button-->
+        <button onclick="YGPA_1()">Calculate YGPA</button><br>
+  
+            <!-- Read-only input field to display 
+            output and cannot be modified -->
+        <input type="text" id="value1"  readonly />
+    </div>
+  
+    <div>
+
+        <!-- Defines a field for entering a number -->
+        <h2>Total sub of 1st sem <input type="number" id="sub1" />?
+            Total sub of 2nd sem
+            <input type="number" id="sub2" />?
+        </h2>
+          
+        <!-- onclick event is to call the function 
+            when user click on the button -->
+        <button onclick="marks_2()">Calculate</button></br>
+          
+        <!-- Read-only input field to display 
+            output and cannot be modified -->
+        <h2>Total marks</h2></h2><input type="text" id="value2" readonly />
+        <h2>Your marks</h2></h2><input type="text" id="value3" readonly />
+        
+    </div>
+      
+    <script>
+    function YGPA_1() {
+  
+        // Method returns the element of percent id
+        sgp = document.getElementById("sgpa").value;
+        ygpa2= sgp/2; 
+        document.getElementById("value1")
+            .value = ygpa2;
+    }
+      
+    function marks_2() {
+      
+        // Method returns the element of num1 id
+        num1 = document.getElementById("sub1").value;
+          
+        // Method returns the elements of num2 id
+        num2 = document.getElementById("sub2").value;
+        Day =(100*num1)+(100*num2);
+        document.getElementById("value2")
+            .value = Day;
+
+        // Method returns the element of percent id
+        sgp = document.getElementById("sgpa").value;
+        Day2 =(100*num1)+(100*num2);
+        
+        ygpa3=((sgp/2)-0.75)*10;
+        ygpa4=(Day2/100)*ygpa3;
+        document.getElementById("value3")
+            .value = ygpa4;
+
+            
+    }</script>
+</body>
+  
+</html>
